@@ -195,10 +195,10 @@ static void ir_learn_manual_tx_task(void *arg)
     ESP_GOTO_ON_FALSE(tx_queue, ESP_FAIL, err, TAG, "Queue creation failed");
 
     ESP_ERROR_CHECK(gpio_config(&io_enable_cfg));
-    gpio_set_level(IR_RX_CTRL_GPIO_NUM, 0);
+    gpio_set_level(IR_RX_CTRL_GPIO_NUM, IR_TX_DETECT_IO);
 
     ESP_ERROR_CHECK(gpio_config(&io_detect_cfg));
-    gpio_install_isr_service(0);
+    gpio_install_isr_service(IR_TX_DETECT_IO);
     ESP_ERROR_CHECK(gpio_isr_handler_add(IR_TX_DETECT_IO, detect_to_handler, tx_queue));
 
     while (1) {
