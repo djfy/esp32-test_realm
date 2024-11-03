@@ -2,6 +2,11 @@
 This is a template for running ESP-IDF v5.3.1 (using Python 3.10.12) in a VSCode devcontainer.
 
 # Pre-requisites
+- VSCode
+  - Extensions:
+    - `Remote - Containers`
+    - `Remote Development`
+    - `Docker`
 - Docker/Docker Desktop
   - Use WSL2 backend for Docker on Windows
 - Follow the `usbipd` setup https://github.com/espressif/vscode-esp-idf-extension/blob/608a45e2e0a2069b3f954c97f9eff65e96b8ff7d/docs/tutorial/using-docker-container.md#usbipd
